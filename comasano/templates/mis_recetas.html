@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+<h2>Administrar Recetas</h2>
+<a href="{% url 'nueva_receta' %}" class="btn btn-success">Nueva Receta</a>
+
+<table class="table">
+{% for receta in recetas %}
+  <tr><td>{{ receta.titulo }}</td>
+    <td><a href="{% url 'editar_receta' pk=receta.pk %}">Editar</a></td>
+    <td><a href="{% url 'eliminar_receta' receta.id %}">Eliminar</a></td>
+  </tr>
+  
+  {% endfor %}
+</table>
+</div>
+{% endblock %}
