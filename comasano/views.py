@@ -25,6 +25,9 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def exito(request):
+    return render(request, 'exito.html')
+
 @method_decorator(login_required, name='dispatch')
 class MisRecetasView(ListView):
     model = Receta
@@ -36,7 +39,7 @@ class CrearRecetaView(CreateView):
     model = Receta
     template_name = 'crear_receta.html'
     fields = ['titulo', 'subtitulo', 'cuerpo', 'autor', 'facilidad_preparacion', 'tiempo_preparacion', 'imagen']
-    success_url = 'mis_recetas/exito'
+    success_url = '/exito'
 
 @method_decorator(login_required, name='dispatch')
 class EditarRecetaView(UpdateView):

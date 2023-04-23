@@ -29,6 +29,7 @@ urlpatterns = [
     path('detalle_receta/<int:id>/', detalle_receta, name='detalle_receta'),
     
     path('mis_recetas/', MisRecetasView.as_view(), name='mis_recetas'),
+    path('exito/', views.exito, name='exito'),
     path('editar_receta/<int:pk>/', EditarRecetaView.as_view(), name='editar_receta'),
     path('nueva_receta/', CrearRecetaView.as_view(), name='nueva_receta'),
     path('eliminar_receta/<int:pk>/', EliminarRecetaView.as_view(), name='eliminar_receta'),

@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="container mt-5">
-  <h1>Eliminar categoría</h1>
-  <p>¿Está seguro que desea eliminar la categoría "{{ object.titulo }}"?</p>
+  <h1>Eliminar receta</h1>
+  <p>¿Está seguro que desea eliminar la receta "{{ object.titulo }}"?</p>
   <form method="post">
     {% csrf_token %}
     <button type="submit">Eliminar</button>
