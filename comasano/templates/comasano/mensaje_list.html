@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+        <a class="btn btn-success float-end"  href="{% url 'mensaje-create' %}">Enviar Mensaje</a>
+    
+
+    <h2>Mensajes recibidos</h2>
+
+    {%  for mensaje in mensajes  %}
+    {{ mensaje.mensaje }}
+        <br><small>{{ mensaje.fecha }}</small> / <a href="{% url 'mensaje-delete' mensaje.id %}">Borrar</a>
+    <hr />
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

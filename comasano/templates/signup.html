@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Crea tu cuenta</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_table}}
+    <input type="submit" value="Registrar">
+</form>
+</div>
+{% endblock %}

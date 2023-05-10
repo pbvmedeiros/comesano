@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from comasano import views
 from comasano.views import lista_recetas, detalle_receta
-from comasano.views import MisRecetasView, CrearRecetaView, EditarRecetaView, EliminarRecetaView
+from comasano.views import MisRecetasView, CrearRecetaView, EditarRecetaView, EliminarRecetaView, Login, SignUp, Logout, ProfileUpdate, ProfileCreate, MensajeCreate, MensajeDelete, MensajeList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +33,16 @@ urlpatterns = [
     path('editar_receta/<int:pk>/', EditarRecetaView.as_view(), name='editar_receta'),
     path('nueva_receta/', CrearRecetaView.as_view(), name='nueva_receta'),
     path('eliminar_receta/<int:pk>/', EliminarRecetaView.as_view(), name='eliminar_receta'),
+
+    
+    path('login/', Login.as_view(), name="login"),
+    path('signup/', SignUp.as_view(), name="signup"),
+    path('logout/', Logout.as_view(), name="logout"),
+
+    path('profile/create', ProfileCreate.as_view(), name="profile-create" ),
+    path('profile/<pk>/update', ProfileUpdate.as_view(), name="profile-update" ),
+    path('mensaje/list', MensajeList.as_view(), name="mensaje-list" ),
+    path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create" ),
+    path('mensaje/<pk>/delete', MensajeDelete.as_view(), name="mensaje-delete"),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

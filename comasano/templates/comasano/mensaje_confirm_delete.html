@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Confirmar eliminar mensaje</h2>
+<p>Confirmas que queres eliminar el mensaje? </p>
+<form method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="Borrar">
+    <a class="btn btn-primary" href="{% url 'mensaje-list' %}">Cancelar</a>
+</form>
+    
+    
+{%endblock%}
